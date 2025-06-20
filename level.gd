@@ -34,4 +34,16 @@ func _ready():
   sprite.offset = Vector2.ZERO
   player.add_child(sprite)
 
+  # add a platform at 1.0 y position
+  var platform = StaticBody2D.new()
+  platform.scale = Vector2(1.0, 1.0)
+  platform.position = Vector2(0.5, 1.0)
+
+  var platform_sprite = Sprite2D.new()
+  platform_sprite.texture = tex
+  platform_sprite.scale = Vector2(1.0, 1.0) 
+  platform_sprite.offset = Vector2.ZERO
+  platform.add_child(platform_sprite)
+  add_child(platform)
+
   add_child(player)
